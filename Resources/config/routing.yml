@@ -1,0 +1,3 @@
+vaddy_verification:
+    path: "vaddy-%vaddy.verification%.html"
+    defaults: { _controller: vaddy.controller.verification:indexAction }

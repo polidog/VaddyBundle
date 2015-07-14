@@ -1,0 +1,29 @@
+{
+    "name": "polidog/vaddy-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "polidog",
+            "email": "polidogs@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/symfony": "~2.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.7.*",
+        "phpunit/phpcov": "*",
+        "phake/phake": "2.0.*@dev",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Polidog\\VaddyBundle\\": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Polidog\\VaddyBundle\\": "Tests/"
+        }
+    }
+}

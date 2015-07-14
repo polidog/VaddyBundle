@@ -1,0 +1,6 @@
+services:
+    vaddy.controller.verification:
+        class: Polidog\VaddyBundle\Controller\VerificationController
+        arguments:
+            - %vaddy.verification%
+        lazy: true
