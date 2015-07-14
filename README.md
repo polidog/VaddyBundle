@@ -7,8 +7,7 @@
 
 ## できること
 
-VAddyでサーバを追加する際に、通常は認証コードを記述した認証ファイルを用意しなければならないんですが、VaddyBundleを使えばconfig.ymlに認証コードを書けば認証ファイルの用意をしなくて大丈夫です。
-ほんの少しだけVAddyの導入がしやすくなる気がします。
+- 認証コードのみを設定すれば、認証ファイルがいらなくなる。
 
 
 ## つかいかた
@@ -36,12 +35,14 @@ $ composer.phar require polidog/vaddy-bundle
 
 ### config.yml
 
+xxxxxxxxx→VAddyのVerification Codeになります。
+
 ```
 // vim app/config/config.yml
 
 
 vaddy:
-    verification: 'Verification code'
+    verification: 'xxxxxxxxx'
 ```
 
 よりかっこいい感じの書き方
@@ -49,7 +50,7 @@ vaddy:
 ```
 // vim app/parameters.yml
 
-vaddy_verification_code: 'Verification code'
+vaddy_verification_code: 'xxxxxxxxx'
 ```
 
 ```
@@ -84,6 +85,14 @@ Defaults     _controller: vaddy.controller.verification:indexAction
 Requirements NO CUSTOM
 Options      compiler_class: Symfony\Component\Routing\RouteCompiler
 ```
+
+実際にhttpでアクセスする
+
+```
+$ curl localhost:8000/vaddy-xxxxxxxxx.html
+xxxxxxxxx
+```
+
 
 ここまで完了したら、適当にサーバにデプロイしてから、VAddyの管理画面側で`Verify`ボタンを押してください。
 
